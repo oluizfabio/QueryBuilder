@@ -1,0 +1,17 @@
+﻿{
+  "table": "People",
+  "fields": [ "name", "age" ],
+  "conditions": [
+    {
+      "operator": "<",
+      "column": "age",
+      "value": "60"
+    },
+    {
+      "operator": "LIKE",
+      "column": "name",
+      "value": "Peter%",
+      "logicalOperator": "AND NOT"
+    }
+  ]
+}

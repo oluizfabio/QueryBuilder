@@ -1,0 +1,23 @@
+﻿{
+  "table": "People",
+  "fields": [ "name", "age" ],
+  "conditions": [
+    {
+      "operator": "<",
+      "column": "age",
+      "value": "60"
+    },
+    {
+      "operator": ">",
+      "column": "age",
+      "value": "30",
+      "logicalOperator": "AND"
+    },
+    {
+      "operator": "=",
+      "column": "name",
+      "value": "Peter",
+      "logicalOperator": "OR NOT"
+    }
+  ]
+}

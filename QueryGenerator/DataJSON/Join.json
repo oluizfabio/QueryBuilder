@@ -1,0 +1,25 @@
+﻿{
+  "table": "Product",
+  "fields": [ "Id", "Name", "Price" ],
+  "conditions": [
+    {
+      "operator": ">",
+      "column": "Price",
+      "value": "14"
+    },
+    {
+      "operator": "=",
+      "column": "Name",
+      "value": "Test"
+    }
+  ],
+  "queryJoins": [
+    {
+      "table": "HistoryPrice",
+      "column": "ProductId",
+      "relatedTable": "Product",
+      "relatedColumn": "Id",
+      "clause": "INNER"
+    }
+  ]
+}

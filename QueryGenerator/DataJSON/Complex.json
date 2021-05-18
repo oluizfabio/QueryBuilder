@@ -1,0 +1,56 @@
+﻿{
+  "table": "Product",
+  "fields": [ "Id", "Name", "Price" ],
+  "conditions": [
+    {
+      "operator": "=",
+      "column": "Price",
+      "value": "14"
+
+    },
+    {
+      "operator": "=",
+      "column": "Name",
+      "value": "Test",
+      "logicalOperator": "AND NOT"
+    },
+    {
+      "operator": "BETWEEN",
+      "column": "age",
+      "value": "60",
+      "rightValue": "90",
+      "logicalOperator": "AND"
+    },
+    {
+      "logicalOperator": "AND",
+      "operator": "= ALL",
+      "column": "age",
+      "query": {
+        "table": "Orders",
+        "fields": [ "OrderID", "age" ],
+        "conditions": [
+          {
+            "operator": "<",
+            "column": "age",
+            "value": "60"
+          },
+          {
+            "operator": "=",
+            "column": "name",
+            "value": "Peter",
+            "logicalOperator": "OR"
+          }
+        ]
+      }
+    }
+  ],
+  "queryJoins": [
+    {
+      "table": "HistoryPrice",
+      "column": "ProductId",
+      "relatedTable": "Product",
+      "relatedColumn": "Id",
+      "clause": "INNER"
+    }
+  ]
+}
